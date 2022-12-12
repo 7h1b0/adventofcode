@@ -82,11 +82,11 @@ function getReachableChildrens(nodeId) {
 
   while (node) {
     let cost = costs[node];
-    let children = getReachableChildrens(node);
-    children.forEach((n) => {
+    let childrens = getReachableChildrens(node);
+    childrens.forEach((children) => {
       let newCost = cost + 1;
-      if (!costs[n] || costs[n] > newCost) {
-        costs[n] = newCost;
+      if (!costs[children] || costs[children] > newCost) {
+        costs[children] = newCost;
       }
     });
     visited.push(node);
