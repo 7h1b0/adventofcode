@@ -1,0 +1,12 @@
+{
+  "name": "adventofcode2022",
+  "version": "1.0.0",
+  "description": "",
+  "author": "7h1b0",
+  "license": "MIT",
+  "scripts": {
+    "part1": "sh -c 'cd $0 && node part1.js'",
+    "part2": "sh -c 'cd $0 && node part2.js'",
+    "create": "sh -c 'mkdir ./$0 && cp -r ./templates/* ./$0'"
+  }
+}
