@@ -14,5 +14,16 @@ function readFile() {
 (async () => {
   const data = await readFile();
 
-  // TODO
+  const sum = data.reduce((acc, line) => {
+    const match = line.match(/\d/g);
+
+    const first = match.at(0);
+    const last = match.at(-1);
+
+    const number = Number(first + last);
+
+    return acc + number;
+  }, 0);
+
+  console.log(sum);
 })();

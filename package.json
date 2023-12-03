@@ -5,8 +5,8 @@
   "author": "7h1b0",
   "license": "MIT",
   "scripts": {
-    "part1": "sh -c 'cd 2023/$0 && node part1.js'",
-    "part2": "sh -c 'cd 2023/$0 && node part2.js'",
+    "part1": "sh -c 'cd ./2023/$0 && node part1.js'",
+    "part2": "sh -c 'cd ./2023/$0 && node part2.js'",
     "create": "sh -c 'mkdir ./2023/$0 && cp -r ./templates/* ./2023/$0'"
   }
 }
