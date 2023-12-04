@@ -1,20 +1,7 @@
-const fs = require("fs");
+import runner from "../../runner.js";
 
-function readFile() {
-  return new Promise((resolve, reject) => {
-    fs.readFile("./input.txt", "utf8", (err, data) => {
-      if (err) {
-        return reject(err);
-      }
-      resolve(data.split("\n"));
-    });
-  });
-}
-
-(async () => {
-  const data = await readFile();
-
-  const sum = data.reduce((acc, line) => {
+runner((data) => {
+  return data.reduce((acc, line) => {
     const match = line.match(/\d/g);
 
     const first = match.at(0);
@@ -24,6 +11,4 @@ function readFile() {
 
     return acc + number;
   }, 0);
-
-  console.log(sum);
-})();
+});

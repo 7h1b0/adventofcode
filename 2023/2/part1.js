@@ -1,15 +1,4 @@
-const fs = require("fs");
-
-function readFile() {
-  return new Promise((resolve, reject) => {
-    fs.readFile("./input.txt", "utf8", (err, data) => {
-      if (err) {
-        return reject(err);
-      }
-      resolve(data.split("\n"));
-    });
-  });
-}
+import runner from "../../runner.js";
 
 function parser(line) {
   const match = line.match(/Game (\d+): (.*)/);
@@ -49,13 +38,9 @@ function withinLimit({ max }) {
   return within;
 }
 
-(async () => {
-  const data = await readFile();
-
-  const res = data.reduce((acc, line) => {
+runner((data) => {
+  return data.reduce((acc, line) => {
     const game = parser(line);
     return withinLimit(game) ? game.id + acc : acc;
   }, 0);
-
-  console.log(res);
-})();
+});

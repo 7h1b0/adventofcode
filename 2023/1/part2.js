@@ -1,15 +1,4 @@
-const fs = require("fs");
-
-function readFile() {
-  return new Promise((resolve, reject) => {
-    fs.readFile("./input.txt", "utf8", (err, data) => {
-      if (err) {
-        return reject(err);
-      }
-      resolve(data.split("\n"));
-    });
-  });
-}
+import runner from "../../runner.js";
 
 function letterToNumber(data) {
   switch (data) {
@@ -48,10 +37,8 @@ function parser(line) {
   return null;
 }
 
-(async () => {
-  const data = await readFile();
-
-  const sum = data.reduce((acc, line) => {
+runner((data) => {
+  return data.reduce((acc, line) => {
     let match = [];
     let res = parser(line);
     while (res != null) {
@@ -66,6 +53,4 @@ function parser(line) {
 
     return acc + number;
   }, 0);
-
-  console.log(sum);
-})();
+});

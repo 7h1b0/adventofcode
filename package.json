@@ -2,6 +2,7 @@
   "name": "adventofcode",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "author": "7h1b0",
   "license": "MIT",
   "scripts": {

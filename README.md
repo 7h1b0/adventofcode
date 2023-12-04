@@ -1,6 +1,6 @@
-# Advent of Code 2022
+# Advent of Code
 
-This repository contains my [Advent of Code 2022](https://adventofcode.com/2022) solutions in Javascript.
+This repository contains my [Advent of Code](https://adventofcode.com) solutions in Javascript.
 
 I don't make major changes after submitting the correct answer and my solutions are not necessarily the best or the fastest.
 

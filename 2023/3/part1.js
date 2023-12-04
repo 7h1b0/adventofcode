@@ -1,17 +1,6 @@
-const fs = require("fs");
+import runner from "../../runner.js";
 
 const graph = new Map();
-
-function readFile() {
-  return new Promise((resolve, reject) => {
-    fs.readFile("./input.txt", "utf8", (err, data) => {
-      if (err) {
-        return reject(err);
-      }
-      resolve(data.split("\n"));
-    });
-  });
-}
 
 function getNodeId(column, row) {
   return `${column}-${row}`;
@@ -67,14 +56,10 @@ function process(line, index) {
   return sum;
 }
 
-(async () => {
-  const data = await readFile();
-
+runner((data) => {
   data.forEach((line, index) => findSymbol(line, index));
 
-  const sum = data.reduce((acc, line, index) => {
+  return data.reduce((acc, line, index) => {
     return process(line, index) + acc;
   }, 0);
-
-  console.log(sum);
-})();
+});
